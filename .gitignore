@@ -94,3 +94,5 @@ fabric.properties
 geckodriver*
 chromedriver*
 iedriver*
+
+# reports
