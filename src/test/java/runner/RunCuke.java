@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features="src/test/java/features",
         glue={"steps"},
+        plugin = {"pretty","html:src/test/java/reports"},
         monochrome=true)
 
 public class RunCuke{
