@@ -96,3 +96,5 @@ chromedriver*
 iedriver*
 
 # reports
+
+src/test/java/reports

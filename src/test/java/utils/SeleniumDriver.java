@@ -15,6 +15,7 @@ public class SeleniumDriver {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
     public static WebDriver getDriver(){
         return driver;
@@ -22,8 +23,7 @@ public class SeleniumDriver {
     public static void tearDown() {
         if (driver != null) {
             System.out.println("Running tearDown");
-//            driver.close();
-//            driver.quit();
+            driver.quit();
         }
         seleniumDriver = null;
     }
