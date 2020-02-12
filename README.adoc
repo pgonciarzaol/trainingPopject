@@ -1,0 +1,35 @@
+= trainingProject
+
+A training project to train and maybe show off a little my test automating skills
+
+== How to run this project
+
+=== Install correct browser driver for your system
+
+As it is, the project is configured to run tests in Chrome browser.
+To change this please edit src/test/java/utils/SeleniumDriver.java file and replace
+[source,java]
+----
+
+ private SeleniumDriver(){
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+    }
+----
+with:
+[source,java]
+----
+ private SeleniumDriver(){
+        driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+    }
+----
+
+to use Firefox browser.
+
+Regardless of the browser you use, you will surely need to download
+link:https://sites.google.com/a/chromium.org/chromedriver/[ChromeDriver],
+link:https://github.com/mozilla/geckodriver/releases[FirefoxDriver] or a driver
+for any other browser of your choice.
